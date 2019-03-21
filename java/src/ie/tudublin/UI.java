@@ -54,6 +54,7 @@ public class UI extends PApplet
         chud.render();
 
         w.render();
+        w.update();
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");

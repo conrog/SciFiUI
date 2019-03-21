@@ -56,7 +56,16 @@ public class Window
 
     public void update()
     {
-        
+        if(ui.checkKey(38))
+        {
+
+            velocity += 0.05f;
+        }
+
+        if(ui.checkKey(40))
+        {
+            velocity -= 0.05f;
+        }
     }
 
 
