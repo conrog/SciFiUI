@@ -32,7 +32,7 @@ public class UI extends PApplet
     public void settings()
     {
         //1920 x 1279
-        size(800,800);
+        size(1280,720);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(); 
     }
@@ -47,13 +47,14 @@ public class UI extends PApplet
         chud = new CenterHud(this, width/2, height/2, width * 0.4f);
         w = new Window(this,width,height);
         img = loadImage("space.jpg");
-        img.resize(800, 800);
+        img.resize(768,648);
     }
 
 
     public void draw()
     {   
-        background(img);
+        background(0);
+        image(img,width*0.2f,height*0.05f);
         w.render();
         w.update();
         r.render();
