@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+
 public class Window
 {
     UI ui;
@@ -32,7 +33,7 @@ public class Window
 
 
     public void render()
-    {   
+    {       
         ui.stroke(0,255,0);
         ui.line(sideGap, topGap, width-sideGap, topGap); //Top
 
