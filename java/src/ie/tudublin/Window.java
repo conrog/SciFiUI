@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-
 public class Window
 {
     UI ui;
@@ -51,8 +50,9 @@ public class Window
 
         ui.line(sideGap, height-topGap, width-sideGap, height - topGap); //Bottom
 
-        ui.text("Velocity" + " " + velocity, sideGap * 0.9f, height/2);
-        ui.text(altitude + " " + "Altitude", width - sideGap, height/2);
+        ui.text(velocity, sideGap * 0.9f, height/2);
+        ui.text(altitude, width - sideGap, height/2);
+
     }
 
     public void update()

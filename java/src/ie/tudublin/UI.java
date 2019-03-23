@@ -10,6 +10,7 @@ public class UI extends PApplet
     Radar r;
     CenterHud chud;
     Window w;
+    Star s;
 
     boolean[] keys = new boolean[1024];
 
@@ -45,18 +46,24 @@ public class UI extends PApplet
         r = new Radar(this, width * 0.9f, height * 0.9f, width * 0.1f);
         chud = new CenterHud(this, width/2, height/2, width * 0.4f);
         w = new Window(this,width,height);
+        s = new Star(this);
     }
 
 
     public void draw()
     {   
         background(0);
+        s.render();
+        s.update();
+
         w.render();
         w.update();
+
         r.render();
         r.update();
 
         chud.render();
+
 
         if (checkKey(LEFT))
         {
