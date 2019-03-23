@@ -38,7 +38,6 @@ public class UI extends PApplet
     }
 
 
-    public PImage img;
     public void setup()
     {
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
@@ -46,15 +45,12 @@ public class UI extends PApplet
         r = new Radar(this, width * 0.9f, height * 0.9f, width * 0.1f);
         chud = new CenterHud(this, width/2, height/2, width * 0.4f);
         w = new Window(this,width,height);
-        img = loadImage("space.jpg");
-        img.resize(768,648);
     }
 
 
     public void draw()
     {   
         background(0);
-        image(img,width*0.2f,height*0.05f);
         w.render();
         w.update();
         r.render();
