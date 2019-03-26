@@ -1,11 +1,8 @@
 package ie.tudublin;
 
 
-public class CenterHud{
-    UI ui;
+public class CenterHud extends UiObject{
 
-    private float x;
-    private float y;
     private float circleDiameter;
     private float circleRadius;
 
@@ -13,12 +10,10 @@ public class CenterHud{
     private float yaw;
     private float roll;
 
-    public CenterHud (UI ui, float x, float y, float circleDiameter)
+    public CenterHud (UI ui, float x, float y, float size, float rotation)
     {
-        this.ui = ui;
-        this.x = x;
-        this.y = y;
-        this.circleDiameter = circleDiameter;
+        super(ui, x, y, size, rotation);
+        this.circleDiameter = size;
         this.circleRadius = circleDiameter / 2f;
 
         this.pitch = 0.0f;
@@ -30,8 +25,8 @@ public class CenterHud{
     {   
         ui.pushMatrix();
         ui.stroke(0,255,0);
-        ui.ellipse(x,y,circleDiameter,circleDiameter);
-        ui.translate(x, y);
+        ui.ellipse(position.x,position.y,circleDiameter,circleDiameter);
+        ui.translate(position.x, position.y);
         ui.text("R" +"   "+roll, - (circleRadius * 0.98f), -15);
         ui.text("Y" +"   "+yaw, - (circleRadius * 0.98f), 0);
         ui.text("P" +"   "+ pitch, - (circleRadius * 0.98f), 15);

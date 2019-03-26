@@ -2,22 +2,18 @@ package ie.tudublin;
 
 import processing.core.PVector;
 
-public class Star{
-    UI ui;
-    private PVector position;
-    private float size;
+public class Star extends UiObject{
 
-    public Star(UI ui)
+
+    public Star(UI ui, float x, float y, float size, float rotation)
     {
-        this.ui = ui;
-        position = new PVector(ui.width/2,ui.height/2);
+        super(ui, x, y, size, rotation);
     }
 
     public void render()
     {
-        ui.fill(255);
-        ui.noStroke();
-        ui.ellipse(position.x, position.y, 10, 10);
+        ui.stroke(255);
+        ui.ellipse(position.x, position.y, size, size);
     }
 
     public void update()

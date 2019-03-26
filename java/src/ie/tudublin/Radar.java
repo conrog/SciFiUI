@@ -1,22 +1,12 @@
 package ie.tudublin;
 
-public class Radar{
-
-    UI ui;
-    private float x;
-    private float y;
-    private float diameter;
+public class Radar extends UiObject
+{
     private float radius;
 
-    private float rotation;
-
-    public Radar(UI ui, float x, float y, float diameter){
-        this.ui = ui;
-        this.x = x;
-        this.y = y;
-        this.diameter = diameter;
-        this.radius = diameter/2f;
-
+    public Radar(UI ui, float x, float y, float size, float rotation){
+        super(ui, x, y, size, rotation);
+        this.radius = size/2f;
     }
 
     public void render()
@@ -25,9 +15,9 @@ public class Radar{
         ui.noFill();
 
         ui.pushMatrix();
-        ui.translate(x, y);
+        ui.translate(position.x, position.y);
         ui.rotate(rotation);
-        ui.ellipse(0, 0, diameter, diameter);
+        ui.ellipse(0, 0, size, size);
         ui.line(0,0,radius,0);
         ui.popMatrix();
     }
