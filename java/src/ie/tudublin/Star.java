@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-import processing.core.PVector;
 
 public class Star extends UiObject{
 
@@ -11,7 +10,7 @@ public class Star extends UiObject{
     }
 
     public void render()
-    {
+    {   
         ui.stroke(255);
         ui.ellipse(position.x, position.y, size, size);
     }
@@ -36,6 +35,26 @@ public class Star extends UiObject{
         if(ui.checkKey('d'))
         {
             position.x += 1;
+        }
+
+        if( position.x < ui.width * 0.2f)
+        {
+            position.x = ui.width * 0.8f;
+        }
+
+        if( position.x > ui.width * 0.8f)
+        {
+            position.x = ui.width * 0.2f;
+        }
+
+        if ( position.y < 0 )
+        {
+            position.y = ui.height;
+        }
+
+        if ( position.y > ui.height)
+        {
+            position.y = 0;
         }
     }
 
