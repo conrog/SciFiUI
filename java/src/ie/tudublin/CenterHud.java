@@ -52,10 +52,29 @@ public class CenterHud extends UiObject{
         ui.line( - 25 ,  - circleRadius + 15,  25 ,  - circleRadius + 15); //Top Indent
         ui.line( 25 ,   circleRadius - 15 ,  - 25 ,   circleRadius - 15 ); //Bottom Indent
 
+        //Text
+        ui.textAlign(UI.CENTER,UI.CENTER);
+
         //Pitch Yaw and Roll
-        ui.text("R" +"   "+roll, - (circleRadius * 0.99f), -14);
-        ui.text("Y" +"   "+yaw, - (circleRadius * 0.99f), 2);
-        ui.text("P" +"   "+ pitch, - (circleRadius * 0.99f), 18);
+        ui.text("R" +"   "+roll, - (circleRadius * 0.92f), -16);
+        ui.text("Y" +"   "+yaw, - (circleRadius * 0.92f), 0);
+        ui.text("P" +"   "+ pitch, - (circleRadius * 0.92f), 16);
+
+        //Roll
+        ui.text("ROLL", 0, - (circleRadius * 0.99f));
+        
+        //Yaw
+        ui.text("YAW", 0,  (circleRadius * 0.97f));
+
+        //Pitch
+        char[] pitch = {'P','I','T','C','H'};
+        for( int i = 0; i < 5 ; i++)
+        {
+            ui.text(pitch[i] , (circleRadius * 0.98f),  -24 + (i * 11) );
+        }
+
+
+
         ui.popMatrix();
     }
 
