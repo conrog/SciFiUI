@@ -25,6 +25,7 @@ public class CenterHud extends UiObject{
         ui.pushMatrix();
         ui.translate(position.x, position.y);
         ui.stroke(255,255,255);
+        ui.noFill();
         
         //Bottom Arc
         ui.arc(0, 0, circleDiameter, circleDiameter , 0.1309f, 1.439897f); //Right Side

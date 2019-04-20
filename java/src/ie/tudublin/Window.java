@@ -14,8 +14,23 @@ public class Window extends UiObject
 
     public void render()
     {       
-        ui.stroke(0,255,0);
-        ui.rect(position.x, position.y, size, size);
+        ui.stroke(0);
+        ui.fill(255);
+        ui.rect(0, position.y, position.x , ui.height);
+        ui.rect(ui.width - position.x, position.y, position.x, ui.height);
+
+        //Left Side : Velocity
+        ui.quad(position.x, 200, 
+                position.x + 40, 260, 
+                position.x + 40, 460, 
+                position.x, 520);
+
+        //Right Side : Alitude
+        ui.quad(- position.x + ui.width, 200, 
+                - position.x + ui.width - 40, 260, 
+                - position.x + ui.width - 40, 460, 
+                - position.x + ui.width, 520);
+
 
     }
 

@@ -40,9 +40,9 @@ public class UI extends PApplet
 
     public void setup()
     {
-        uiObjects.add( new Radar(this, width * 0.9f, height * 0.9f , height * 0.1f, 0) );
+        //uiObjects.add( new Radar(this, width * 0.9f, height * 0.9f , height * 0.1f, 0) );
         uiObjects.add( new CenterHud(this, width/2f, height/2f, width * 0.4f,0) );
-        uiObjects.add( new Window(this, width * 0.2f, 0, width *  0.6f, 0) );
+        uiObjects.add( new Window(this, width * 0.15f, 0, width *  0.6f, 0) );
         
         //Adding Stars in the background
         /*
