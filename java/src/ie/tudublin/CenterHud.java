@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-
 public class CenterHud extends UiObject{
 
     private float circleDiameter;
@@ -24,12 +23,39 @@ public class CenterHud extends UiObject{
     public void render()
     {   
         ui.pushMatrix();
-        ui.stroke(0,255,0);
-        ui.ellipse(position.x,position.y,circleDiameter,circleDiameter);
         ui.translate(position.x, position.y);
-        ui.text("R" +"   "+roll, - (circleRadius * 0.98f), -15);
-        ui.text("Y" +"   "+yaw, - (circleRadius * 0.98f), 0);
-        ui.text("P" +"   "+ pitch, - (circleRadius * 0.98f), 15);
+        ui.stroke(255,255,255);
+        
+        //Bottom Arc
+        ui.arc(0, 0, circleDiameter, circleDiameter , 0.1309f, 1.439897f); //Right Side
+        ui.arc(0, 0, circleDiameter, circleDiameter , 1.701696f, 3.010693f); //Left Side
+
+        ui.line( UI.cos(0.1309f) * circleRadius, UI.sin(0.1309f) * circleRadius ,  circleRadius - 15 , 25 ); //Right Side Indent
+        ui.line( UI.cos(3.010693f) * circleRadius, UI.sin(3.010693f) * circleRadius , - circleRadius + 15   , 25 ); //Left Side Indent
+
+        ui.line( UI.cos(1.439897f) * circleRadius, UI.sin(1.439897f) * circleRadius ,  25 ,   circleRadius - 15 ); //Bottom Right Side Indent
+        ui.line( UI.cos(1.701696f) * circleRadius, UI.sin(1.701696f) * circleRadius ,  - 25 ,   circleRadius - 15 ); //Bottom Left Side Indent
+
+        //Top Arc
+        ui.arc(0, 0, circleDiameter, circleDiameter , 3.2724923f,  4.5814893f);//Left Side
+        ui.arc(0, 0, circleDiameter, circleDiameter , 4.8432887f,  6.1522856f);//Right Side
+
+        ui.line( UI.cos(6.1522856f) * circleRadius, UI.sin(6.1522856f) * circleRadius ,  circleRadius - 15 , -25 ); //Right Side Indent
+        ui.line( UI.cos(3.2724923f) * circleRadius, UI.sin(3.2724923f) * circleRadius , - circleRadius + 15   , -25 ); //Left Side Indent
+
+        ui.line( UI.cos(4.5814893f) * circleRadius, UI.sin(4.5814893f) * circleRadius ,  - 25 ,  - circleRadius + 15); //Top Left Side Indent
+        ui.line( UI.cos(4.8432887f) * circleRadius, UI.sin(4.8432887f) * circleRadius ,   25 ,  - circleRadius + 15); //Top Right Side Indent
+
+        //Joining Lines
+        ui.line(circleRadius - 15, 25, circleRadius - 15, -25); //Right Side Indent
+        ui.line( - circleRadius + 15, 25, - circleRadius + 15, -25); //Left Side Indent
+        ui.line( - 25 ,  - circleRadius + 15,  25 ,  - circleRadius + 15); //Top Indent
+        ui.line( 25 ,   circleRadius - 15 ,  - 25 ,   circleRadius - 15 ); //Bottom Indent
+
+        //Pitch Yaw and Roll
+        ui.text("R" +"   "+roll, - (circleRadius * 0.99f), -14);
+        ui.text("Y" +"   "+yaw, - (circleRadius * 0.99f), 2);
+        ui.text("P" +"   "+ pitch, - (circleRadius * 0.99f), 18);
         ui.popMatrix();
     }
 
