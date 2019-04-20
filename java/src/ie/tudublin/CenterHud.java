@@ -56,9 +56,12 @@ public class CenterHud extends UiObject{
         ui.textAlign(UI.CENTER,UI.CENTER);
 
         //Pitch Yaw and Roll
-        ui.text("R" +"   "+roll, - (circleRadius * 0.92f), -16);
-        ui.text("Y" +"   "+yaw, - (circleRadius * 0.92f), 0);
-        ui.text("P" +"   "+ pitch, - (circleRadius * 0.92f), 16);
+        ui.text("R", - (circleRadius * 0.98f), -16);
+        ui.text(roll, - (circleRadius * 0.85f), -16);
+        ui.text("Y", - (circleRadius * 0.98f), 0);
+        ui.text(yaw, - (circleRadius * 0.85f), 0);
+        ui.text("P", - (circleRadius * 0.98f), 16);
+        ui.text(pitch, - (circleRadius * 0.85f), 16);
 
         //Roll
         ui.text("ROLL", 0, - (circleRadius * 0.99f));
@@ -80,6 +83,35 @@ public class CenterHud extends UiObject{
 
     public void update()
     {
+        if(ui.checkKey('w'))
+        {
+            pitch += 0.1;
+        }
 
+        if(ui.checkKey('s'))
+        {
+            pitch -= 0.1;
+        }
+
+        if(ui.checkKey('a'))
+        {
+            roll -= 0.1;
+        }
+
+        if(ui.checkKey('d'))
+        {
+            roll += 0.1;
+        }
+
+
+        if(ui.checkKey('q'))
+        {   
+            yaw -= 0.1;
+        }
+
+        if(ui.checkKey('e'))
+        {
+            yaw += 0.1;
+        }
     }
 }
