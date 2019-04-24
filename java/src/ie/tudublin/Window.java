@@ -49,7 +49,30 @@ public class Window extends UiObject
         //Bottom Rectangle
         ui.rect(position.x, ui.height - 25, ui.width - position.x, 25);
 
+        //Outline
+        ui.stroke(255);
 
+        //Left Side
+        ui.line(position.x, 75, position.x + 50, 25);
+        ui.line(position.x, 75, position.x, 200);
+        ui.line(position.x, 200, position.x + 40, 260);
+        ui.line(position.x + 40, 260, position.x + 40, 460);
+        ui.line(position.x + 40, 460, position.x, 520);
+        ui.line(position.x, 520, position.x, ui.height - 75);
+        ui.line(position.x, ui.height - 75, position.x + 50, ui.height -25);
+
+        //Right Side
+        ui.line(ui.width - position.x, 75, ui.width - position.x - 50, 25);
+        ui.line(ui.width - position.x, 75, ui.width - position.x, 200);
+        ui.line(ui.width - position.x, 200, ui.width - position.x - 40, 260);
+        ui.line(ui.width - position.x - 40, 260, ui.width - position.x - 40, 460);
+        ui.line(ui.width - position.x - 40, 460, ui.width - position.x, 520);
+        ui.line(ui.width - position.x, 520, ui.width - position.x, ui.height - 75);
+        ui.line(ui.width - position.x, ui.height - 75, ui.width - position.x - 50, ui.height -25);
+
+        //Top and Bottom
+        ui.line(position.x + 50, 25, ui.width - position.x - 50, 25 );
+        ui.line(position.x + 50, ui.height - 25, ui.width - position.x - 50, ui.height -25);
     }
 
     public void update()
