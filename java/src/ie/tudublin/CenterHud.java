@@ -55,6 +55,7 @@ public class CenterHud extends UiObject{
 
         //Text
         ui.textAlign(UI.CENTER,UI.CENTER);
+        ui.fill(255);
 
         //Pitch Yaw and Roll
         ui.text("R", - (circleRadius * 0.98f), -16);

@@ -14,8 +14,8 @@ public class Window extends UiObject
 
     public void render()
     {       
-        ui.stroke(0);
-        ui.fill(255);
+        ui.noStroke();
+        ui.fill(15);
         ui.rect(0, position.y, position.x , ui.height);
         ui.rect(ui.width - position.x, position.y, position.x, ui.height);
 
@@ -24,12 +24,30 @@ public class Window extends UiObject
                 position.x + 40, 260, 
                 position.x + 40, 460, 
                 position.x, 520);
+        
+        //Top Left Triangle
+        ui.triangle(position.x, 25, position.x,  75 , position.x + 50,  25);
+        
+        //Bottom Left Triangle
+        ui.triangle(position.x, ui.height - 25, position.x, ui.height - 75 , position.x + 50, ui.height - 25);
 
         //Right Side : Alitude
         ui.quad(- position.x + ui.width, 200, 
                 - position.x + ui.width - 40, 260, 
                 - position.x + ui.width - 40, 460, 
                 - position.x + ui.width, 520);
+        
+        //Bottom Right Triangle
+        ui.triangle(ui.width - position.x, ui.height - 25, ui.width - position.x, ui.height - 75 , ui.width - position.x - 50, ui.height - 25);
+        
+        //Top Right Triangle
+        ui.triangle(ui.width - position.x, 25, ui.width - position.x,  75 , ui.width - position.x - 50,  25);
+
+        //Top Rectangle
+        ui.rect(position.x , 0 , ui.width - position.x, 25 );
+
+        //Bottom Rectangle
+        ui.rect(position.x, ui.height - 25, ui.width - position.x, 25);
 
 
     }
