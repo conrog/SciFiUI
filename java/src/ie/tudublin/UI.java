@@ -6,12 +6,13 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Window w;
-    Star s;
-
     boolean[] keys = new boolean[1024];
 
     public ArrayList<UiObject> uiObjects = new ArrayList<UiObject>();
+
+    private float pitch = 0;
+    private float yaw = 0;
+    private float roll = 0;
 
     public void keyPressed()
     {
@@ -68,6 +69,48 @@ public class UI extends PApplet
         }
 
 
+    }
+
+    /**
+     * @return the pitch
+     */
+    public float getPitch() {
+        return pitch;
+    }
+
+    /**
+     * @param pitch the pitch to set
+     */
+    public void setPitch(float pitch) {
+        this.pitch = pitch;
+    }
+
+    /**
+     * @return the yaw
+     */
+    public float getYaw() {
+        return yaw;
+    }
+
+    /**
+     * @param yaw the yaw to set
+     */
+    public void setYaw(float yaw) {
+        this.yaw = yaw;
+    }
+
+    /**
+     * @return the roll
+     */
+    public float getRoll() {
+        return roll;
+    }
+
+    /**
+     * @param roll the roll to set
+     */
+    public void setRoll(float roll) {
+        this.roll = roll;
     }
 }
 
