@@ -7,16 +7,31 @@ public class Star extends UiObject{
     public Star(UI ui, float x, float y, float size, float rotation)
     {
         super(ui, x, y, size, rotation);
+
+        position.x = ui.random(0,ui.width);
+        position.y = ui.random(0,ui.height);
     }
 
     public void render()
     {   
         ui.stroke(255);
+
         ui.ellipse(position.x, position.y, size, size);
+
     }
 
     public void update()
     {
+        if(ui.checkKey('a'))
+        {
+            rotation += 0.01f;
+        }
+
+        if(ui.checkKey('d'))
+        {
+            rotation -= 0.01f;
+        }
+
         if(ui.checkKey('w'))
         {
             position.y -= 1;
@@ -27,24 +42,24 @@ public class Star extends UiObject{
             position.y += 1;
         }
 
-        if(ui.checkKey('a'))
+        if(ui.checkKey('q'))
         {
             position.x -= 1;
         }
 
-        if(ui.checkKey('d'))
+        if(ui.checkKey('e'))
         {
             position.x += 1;
         }
 
-        if( position.x < ui.width * 0.2f)
+        if( position.x < 0)
         {
-            position.x = ui.width * 0.8f;
+            position.x = ui.width;
         }
 
-        if( position.x > ui.width * 0.8f)
+        if( position.x > ui.width)
         {
-            position.x = ui.width * 0.2f;
+            position.x = 0;
         }
 
         if ( position.y < 0 )

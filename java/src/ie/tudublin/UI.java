@@ -41,19 +41,18 @@ public class UI extends PApplet
     public void setup()
     {
         //uiObjects.add( new Radar(this, width * 0.9f, height * 0.9f , height * 0.1f, 0) );
-        uiObjects.add( new CenterHud(this, width/2f, height/2f, width * 0.4f,0) );
+        uiObjects.add( new CenterHud(this, width/2f, height/2f, width * 0.4f, 0) );
+        uiObjects.add( new VelocityTicker(this, width * 0.15f, height/2 , 0, 0) );
+        uiObjects.add( new AltitudeTicker(this, width * 0.85f, height/2 , 0, 0) );
         uiObjects.add( new Window(this, width * 0.15f, 0, width *  0.6f, 0) );
         
         //Adding Stars in the background
-        /*
+        
         for(int i = 0; i < 500; i ++)
         {
-            float x = random(width * 0.2f, width * 0.8f);
-            float y = random(0, height);
-
-            uiObjects.add( new Star(this, x, y, 2, 0 ) );
+            uiObjects.add( new Star(this, 0, 0, 2, 0 ) );
         }
-        */
+        
     }
 
 

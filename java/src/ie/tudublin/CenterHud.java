@@ -77,9 +77,6 @@ public class CenterHud extends UiObject{
         {
             ui.text(pitch[i] , (circleRadius * 0.98f),  -24 + (i * 11) );
         }
-
-
-
         ui.popMatrix();
     }
 
