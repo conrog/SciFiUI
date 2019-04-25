@@ -56,7 +56,10 @@ public class VelocityTicker extends UiObject
                 }
             }
 
-            setVelocity( getVelocity() + 1);
+            if( ui.frameCount % 60 == 0)
+            {
+                setVelocity( getVelocity() + 1);
+            }
         }
 
         if( ui.checkKey('-') )
@@ -73,7 +76,10 @@ public class VelocityTicker extends UiObject
                 }
             }
 
-            setVelocity( getVelocity() - 1);
+            if( ui.frameCount % 60 == 0)
+            {
+                setVelocity( getVelocity() - 1);
+            }
         }
     }
 

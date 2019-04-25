@@ -32,7 +32,6 @@ public class UI extends PApplet
 
     public void settings()
     {
-        //1920 x 1279
         size(1280,720);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(); 
@@ -43,18 +42,21 @@ public class UI extends PApplet
     {
         uiObjects.add( new Radar(this, width * 0.925f, height * 0.2f , height * 0.2f, 2) );
         uiObjects.add( new Radar(this, width * 0.075f, height * 0.2f , height * 0.2f, 0) );
+        
         uiObjects.add( new CenterHud(this, width/2f, height/2f, width * 0.4f, 0) );
+        
         uiObjects.add( new VelocityTicker(this, width * 0.15f, height/2 , 0, 0) );
         uiObjects.add( new AltitudeTicker(this, width * 0.85f, height/2 , 0, 0) );
+
+        uiObjects.add( new AttitudeIndicator(this, width * 0.925f, height * 0.8f , height * 0.2f, 0) );
+
         uiObjects.add( new Window(this, width * 0.15f, 0, width *  0.6f, 0) );
         
         //Adding Stars in the background
-        
         for(int i = 0; i < 500; i ++)
         {
             uiObjects.add( new Star(this, 0, 0, 2, 0 ) );
         }
-        
     }
 
 
