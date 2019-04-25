@@ -79,7 +79,6 @@ public class Window extends UiObject
     {
         if(ui.checkKey(38))
         {
-
             velocity += 0.05f;
         }
 
@@ -88,6 +87,4 @@ public class Window extends UiObject
             velocity -= 0.05f;
         }
     }
-
-
 }

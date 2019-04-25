@@ -2,7 +2,7 @@ package ie.tudublin;
 
 public class VelocityTicker extends UiObject
 {
-    private float yValues[] = { 0, 0, 0, 0};
+    private float yValues[] = { 0, 0, 0};
     private int velocity;
 
     public VelocityTicker(UI ui,float x,float y,float size, float rotation)
@@ -11,18 +11,19 @@ public class VelocityTicker extends UiObject
 
         for(int i = 0; i < yValues.length ; i++)
         {
-            yValues[i] = UI.map(i, 0, 3, 279, 459);
+            yValues[i] = UI.map(i, 0, 2, 280, 400);
         }
 
-        setVelocity(7365);
+        setVelocity(0);
     }
 
 
     public void render()
     {
         ui.fill(255);
+        ui.stroke(255);
         ui.textSize(9);
-        ui.text("VELOCITY",position.x + 15, position.y - 90);
+        ui.text("VELOCITY",position.x + 15, position.y - 100);
 
         for(int i = 0; i < yValues.length; i++)
         {
