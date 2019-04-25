@@ -5,19 +5,11 @@ public class CenterHud extends UiObject{
     private float circleDiameter;
     private float circleRadius;
 
-    private float pitch;
-    private float yaw;
-    private float roll;
-
     public CenterHud (UI ui, float x, float y, float size, float rotation)
     {
         super(ui, x, y, size, rotation);
         this.circleDiameter = size;
         this.circleRadius = circleDiameter / 2f;
-
-        this.pitch = 0.0f;
-        this.yaw = 0.0f;
-        this.roll = 0.0f;
     }
 
     public void render()

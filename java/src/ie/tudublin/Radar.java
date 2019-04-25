@@ -11,8 +11,8 @@ public class Radar extends UiObject
 
     public void render()
     {
-        ui.stroke(0,255,0);
-        ui.noFill();
+        ui.stroke(255);
+        ui.fill(30);
 
         ui.pushMatrix();
         ui.translate(position.x, position.y);
@@ -24,7 +24,7 @@ public class Radar extends UiObject
 
     public void update()
     {
-        rotation += 0.1f;
+        rotation += 0.01f;
     }
 
 

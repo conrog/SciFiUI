@@ -41,7 +41,8 @@ public class UI extends PApplet
 
     public void setup()
     {
-        //uiObjects.add( new Radar(this, width * 0.9f, height * 0.9f , height * 0.1f, 0) );
+        uiObjects.add( new Radar(this, width * 0.925f, height * 0.2f , height * 0.2f, 2) );
+        uiObjects.add( new Radar(this, width * 0.075f, height * 0.2f , height * 0.2f, 0) );
         uiObjects.add( new CenterHud(this, width/2f, height/2f, width * 0.4f, 0) );
         uiObjects.add( new VelocityTicker(this, width * 0.15f, height/2 , 0, 0) );
         uiObjects.add( new AltitudeTicker(this, width * 0.85f, height/2 , 0, 0) );

@@ -36,9 +36,7 @@ public class AltitudeTicker extends UiObject
         ui.fill(255);
         ui.textSize(12);
         ui.textAlign(UI.CENTER,UI.CENTER);
-        ui.text(getAltitude(), position.x - 15, position.y);
-
-        
+        ui.text(getAltitude(), position.x - 15, position.y);  
     }
 
     public void update()
