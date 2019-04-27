@@ -30,12 +30,12 @@ public class AttitudeIndicator extends UiObject
     {
         if(ui.checkKey('a'))
         {
-            rotation += UI.radians(1);
+            rotation += UI.radians(1) / 10;
         }
 
         if(ui.checkKey('d'))
         {
-            rotation -= UI.radians(1);
+            rotation -= UI.radians(1) / 10;
         }
 
         if(ui.checkKey('s'))

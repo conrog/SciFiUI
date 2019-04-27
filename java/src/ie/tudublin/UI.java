@@ -49,6 +49,8 @@ public class UI extends PApplet
         uiObjects.add( new AltitudeTicker(this, width * 0.85f, height/2 , 0, 0) );
 
         uiObjects.add( new AttitudeIndicator(this, width * 0.925f, height * 0.8f , height * 0.2f, 0) );
+        uiObjects.add( new TrusterIndicator(this, width * 0.075f, height * 0.8f , height * 0.2f, 0) );
+        
 
         uiObjects.add( new Window(this, width * 0.15f, 0, width *  0.6f, 0) );
         
