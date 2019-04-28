@@ -40,36 +40,36 @@ public class Star extends UiObject {
 
         if(ui.checkKey('a'))
         {
-            rotation += 0.01f;
+            rotation -= UI.radians(1) / 10;
         }
 
         if(ui.checkKey('d'))
         {
-            rotation -= 0.01f;
-        }
-
-        if(ui.checkKey('w'))
-        {
-            position.x += pitch.x;
-            position.y += pitch.y;
+            rotation += UI.radians(1) / 10;
         }
 
         if(ui.checkKey('s'))
         {
-            position.x -= pitch.x;
-            position.y -= pitch.y;
+            position.x += pitch.x / 2;
+            position.y += pitch.y / 2;
+        }
+
+        if(ui.checkKey('w'))
+        {
+            position.x -= pitch.x / 2;
+            position.y -= pitch.y / 2;
         }
 
         if(ui.checkKey('q'))
         {
-            position.x -= yaw.x;
-            position.y -= yaw.y;
+            position.x -= yaw.x /2;
+            position.y -= yaw.y /2;
         }
 
         if(ui.checkKey('e'))
         {
-            position.x += yaw.x;
-            position.y += yaw.y;
+            position.x += yaw.x / 2;
+            position.y += yaw.y / 2;
         }
 
         if( position.x < 0)

@@ -99,6 +99,24 @@ public class TrusterIndicator extends UiObject
         {
             setPitchUp(0);
         }
+
+        if(ui.checkKey('a'))
+        {
+            setRollLeft(135);
+        }
+        else
+        {
+            setRollLeft(0);
+        }
+
+        if(ui.checkKey('a'))
+        {
+            setRollRight(135);
+        }
+        else
+        {
+            setRollRight(0);
+        }
     }
 
     /**
