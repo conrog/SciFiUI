@@ -40,12 +40,12 @@ public class AttitudeIndicator extends UiObject
 
         if(ui.checkKey('s'))
         {
-            diff += UI.radians(1) / 4;
+            diff += UI.radians(1) / 11.5;
         }
 
         if(ui.checkKey('w'))
         {
-            diff -= UI.radians(1) / 4;
+            diff -= UI.radians(1) / 11.5;
         }
     }
 }

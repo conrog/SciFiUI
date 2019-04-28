@@ -57,7 +57,7 @@ public class UI extends PApplet
         //Adding Stars in the background
         for(int i = 0; i < 500; i ++)
         {
-            uiObjects.add( new Star(this, 0, 0, 2, 0 ) );
+            uiObjects.add( new Star(this, 0, 0, 2, random(radians(0),radians(360))));
         }
     }
 
