@@ -62,9 +62,9 @@ public class YawTicker extends UiObject
         {
             for(int i = 0; i < xValues.length ; i++)
             {
-                if( xValues[i] == ui.width*0.15f )
+                if( xValues[i] == ui.width * 0.15f )
                 {
-                    xValues[i] = ui.width*0.3f;
+                    xValues[i] = ui.width * 0.3f;
                 }
                 else
                 {

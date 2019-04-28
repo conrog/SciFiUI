@@ -53,6 +53,7 @@ public class UI extends PApplet
         uiObjects.add( new Window(this, width * 0.15f, 0, width *  0.6f, 0) );
 
         uiObjects.add( new YawTicker(this, width/2f, height/2f, 0, 0) );
+        uiObjects.add( new PitchTicker(this, width/2f, 0, 0, 0) );
         
         //Adding Stars in the background
         for(int i = 0; i < 500; i ++)
