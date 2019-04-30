@@ -4,14 +4,17 @@ Name: Conor Rogers
 
 Student Number: C17730535
 
+(images/UI.png)
+
 # Description of the assignment
 
-For my assignemnt I decided create a user interface more specifically a Heads Up Display (HUD) for the controls of a spacecraft. I 
+For my assignemnt I decided create a user interface more specifically a Heads Up Display (HUD) for the controls of a spacecraft. I took inspiritation for my design from the recent docking of the Space X Dragon module with the International Space Station. 
 
+There are several elements to the project which are demonstrated in the following video.
 
+[![YouTube](https://www.youtube.com/upload_thumbnail?v=bctZhvw0bsI&t=hqdefault&ts=1556656716216)](https://youtu.be/bctZhvw0bsI)
 
-I took inspiritation for my design from the recent docking of the Space X Dragon module with the International Space Station. 
-
+ 
 # Instructions
 
 The space craft is controlled with the following inputs :
@@ -82,7 +85,7 @@ public void render()
 
 This is an image using a relative URL:
 
-![An image](images/p8.png)
+![An image](images/UI.png)
 
 This is an image using an absolute URL:
 
