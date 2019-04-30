@@ -49,14 +49,21 @@ public class TrusterIndicator extends UiObject
         ui.ellipse(-10,-10,size/20,size/20);
 
         //Outer Circle
-        //Right Side
-        ui.fill(120 + getYawLeft() );
-        ui.ellipse(30,-30,size/20,size/20);
+        //Roll Right
+        ui.fill(120 + getRollRight() );
         ui.ellipse(30,30,size/20,size/20);
-        //Left Side
-        ui.fill(120 + getYawRight() );
-        ui.ellipse(-30,30,size/20,size/20);
         ui.ellipse(-30,-30,size/20,size/20);
+        
+        //Roll Left
+        ui.fill(120 + getRollLeft() );
+        ui.ellipse(30,-30,size/20,size/20);
+        ui.ellipse(-30,30,size/20,size/20);
+        
+        //Center
+        ui.fill(120 + getYawLeft() );
+        ui.ellipse(-45,0,size/20,size/20);
+        ui.fill(120 + getYawRight() );
+        ui.ellipse(45,0,size/20,size/20);
 
 
         ui.popMatrix();
@@ -109,7 +116,7 @@ public class TrusterIndicator extends UiObject
             setRollLeft(0);
         }
 
-        if(ui.checkKey('a'))
+        if(ui.checkKey('d'))
         {
             setRollRight(135);
         }

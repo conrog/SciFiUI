@@ -3,7 +3,6 @@ package ie.tudublin;
 public class VelocityTicker extends UiObject
 {
     private float yValues[] = { 0, 0, 0};
-    private int velocity;
 
     public VelocityTicker(UI ui,float x,float y,float size, float rotation)
     {
@@ -14,7 +13,7 @@ public class VelocityTicker extends UiObject
             yValues[i] = UI.map(i, 0, 2, 280, 400);
         }
 
-        setVelocity(0);
+        ui.setVelocity(0);
     }
 
 
@@ -37,7 +36,7 @@ public class VelocityTicker extends UiObject
         ui.fill(255);
         ui.textSize(12);
         ui.textAlign(UI.CENTER,UI.CENTER);
-        ui.text(getVelocity(), position.x + 15, position.y);
+        ui.text(ui.getVelocity(), position.x + 15, position.y);
     }
 
     public void update()
@@ -58,7 +57,7 @@ public class VelocityTicker extends UiObject
 
             if( ui.frameCount % 60 == 0)
             {
-                setVelocity( getVelocity() + 1);
+                ui.setVelocity( ui.getVelocity() + 1);
             }
         }
 
@@ -78,7 +77,7 @@ public class VelocityTicker extends UiObject
 
             if( ui.frameCount % 60 == 0)
             {
-                setVelocity( getVelocity() - 1);
+                ui.setVelocity( ui.getVelocity() - 1);
             }
         }
     }
@@ -95,20 +94,6 @@ public class VelocityTicker extends UiObject
      */
     public void setyValues(float[] yValues) {
         this.yValues = yValues;
-    }
-
-    /**
-     * @return the velocity
-     */
-    public int getVelocity() {
-        return velocity;
-    }
-
-    /**
-     * @param velocity the velocity to set
-     */
-    public void setVelocity(int velocity) {
-        this.velocity = velocity;
     }
 }
 

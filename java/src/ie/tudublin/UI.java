@@ -13,6 +13,9 @@ public class UI extends PApplet
     private float pitch = 0;
     private float yaw = 0;
     private float roll = 0;
+    
+    private float altitude = 100;
+    private float velocity = 10;
 
     public void keyPressed()
     {
@@ -78,6 +81,34 @@ public class UI extends PApplet
     }
 
     /**
+     * @return the keys
+     */
+    public boolean[] getKeys() {
+        return keys;
+    }
+
+    /**
+     * @param keys the keys to set
+     */
+    public void setKeys(boolean[] keys) {
+        this.keys = keys;
+    }
+
+    /**
+     * @return the uiObjects
+     */
+    public ArrayList<UiObject> getUiObjects() {
+        return uiObjects;
+    }
+
+    /**
+     * @param uiObjects the uiObjects to set
+     */
+    public void setUiObjects(ArrayList<UiObject> uiObjects) {
+        this.uiObjects = uiObjects;
+    }
+
+    /**
      * @return the pitch
      */
     public float getPitch() {
@@ -118,5 +149,35 @@ public class UI extends PApplet
     public void setRoll(float roll) {
         this.roll = roll;
     }
+
+    /**
+     * @return the altitude
+     */
+    public float getAltitude() {
+        return altitude;
+    }
+
+    /**
+     * @param altitude the altitude to set
+     */
+    public void setAltitude(float altitude) {
+        this.altitude = altitude;
+    }
+
+    /**
+     * @return the velocity
+     */
+    public float getVelocity() {
+        return velocity;
+    }
+
+    /**
+     * @param velocity the velocity to set
+     */
+    public void setVelocity(float velocity) {
+        this.velocity = velocity;
+    }
+
+
 }
 

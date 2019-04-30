@@ -1,9 +1,15 @@
 package ie.tudublin;
 
+import java.text.DecimalFormat;
+
 public class AltitudeTicker extends UiObject
 {
+    DecimalFormat df = new DecimalFormat("#.#");
+    private String altFormat;
+    
     private float yValues[] = { 0, 0, 0};
-    private float altitude;
+
+    private float climbRate;
 
     public AltitudeTicker(UI ui,float x,float y,float size, float rotation)
     {
@@ -14,7 +20,7 @@ public class AltitudeTicker extends UiObject
             yValues[i] = UI.map(i, 0, 2, 280, 400);
         }
 
-        altitude = 0;
+        altFormat = df.format( ui.getAltitude());
     }
 
 
@@ -37,12 +43,46 @@ public class AltitudeTicker extends UiObject
         ui.fill(255);
         ui.textSize(12);
         ui.textAlign(UI.CENTER,UI.CENTER);
-        ui.text(getAltitude(), position.x - 15, position.y);  
+        ui.text(altFormat, position.x - 15, position.y);  
     }
 
     public void update()
     {
+        altFormat = df.format( ui.getAltitude() );
 
+        climbRate = ui.getVelocity() / 60 * ui.getPitch() / 60;
+
+        ui.setAltitude( ui.getAltitude() - climbRate );
+
+        if( climbRate < 0 )
+        {
+            for(int i = 0; i < yValues.length ; i++)
+            {
+                if( yValues[i] == 460 )
+                {
+                    yValues[i] = 280;
+                }
+                else
+                {
+                    yValues[i] += 1;
+                }
+            }
+        }
+
+        if( climbRate > 0 )
+        {
+            for(int i = 0; i < yValues.length ; i++)
+            {
+                if( yValues[i] == 280 )
+                {
+                    yValues[i] = 460;
+                }
+                else
+                {
+                    yValues[i] -= 1;
+                }
+            }
+        }
     }
 
     /**
@@ -57,19 +97,5 @@ public class AltitudeTicker extends UiObject
      */
     public void setyValues(float[] yValues) {
         this.yValues = yValues;
-    }
-
-    /**
-     * @return the altitude
-     */
-    public float getAltitude() {
-        return altitude;
-    }
-
-    /**
-     * @param altitude the altitude to set
-     */
-    public void setAltitude(float altitude) {
-        this.altitude = altitude;
     }
 }
