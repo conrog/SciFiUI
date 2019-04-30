@@ -38,12 +38,12 @@ public class Star extends UiObject {
         yaw.y =  (float) Math.sin(rotation);
 
 
-        if(ui.checkKey('a'))
+        if(ui.checkKey('d'))
         {
             rotation -= UI.radians(1) / 10;
         }
 
-        if(ui.checkKey('d'))
+        if(ui.checkKey('a'))
         {
             rotation += UI.radians(1) / 10;
         }

@@ -28,12 +28,12 @@ public class AttitudeIndicator extends UiObject
 
     public void update()
     {
-        if(ui.checkKey('a'))
+        if(ui.checkKey('d'))
         {
             rotation += UI.radians(1) / 10;
         }
 
-        if(ui.checkKey('d'))
+        if(ui.checkKey('a'))
         {
             rotation -= UI.radians(1) / 10;
         }

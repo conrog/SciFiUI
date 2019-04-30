@@ -1,6 +1,14 @@
 package ie.tudublin;
 
-public class CenterHud extends UiObject{
+import java.text.DecimalFormat;
+
+public class CenterHud extends UiObject {
+
+    //For formatting floats to 1 decimal places
+    DecimalFormat df = new DecimalFormat("#.#");
+    private String roll;
+    private String pitch;
+    private String yaw;
 
     private float circleDiameter;
     private float circleRadius;
@@ -10,6 +18,10 @@ public class CenterHud extends UiObject{
         super(ui, x, y, size, rotation);
         this.circleDiameter = size;
         this.circleRadius = circleDiameter / 2f;
+
+        roll = df.format(ui.getRoll());
+        pitch = df.format(ui.getPitch());
+        yaw = df.format(ui.getYaw());
     }
 
     public void render()
@@ -20,24 +32,24 @@ public class CenterHud extends UiObject{
         ui.noFill();
         
         //Bottom Arc
-        ui.arc(0, 0, circleDiameter, circleDiameter , 0.1309f, 1.439897f); //Right Side
-        ui.arc(0, 0, circleDiameter, circleDiameter , 1.701696f, 3.010693f); //Left Side
+        ui.arc(0, 0, circleDiameter, circleDiameter , UI.radians(7.5f), UI.radians(82.5f)); //Right Side
+        ui.arc(0, 0, circleDiameter, circleDiameter , UI.radians(97.5f), UI.radians(172.5f)); //Left Side
 
-        ui.line( UI.cos(0.1309f) * circleRadius, UI.sin(0.1309f) * circleRadius ,  circleRadius - 15 , 25 ); //Right Side Indent
-        ui.line( UI.cos(3.010693f) * circleRadius, UI.sin(3.010693f) * circleRadius , - circleRadius + 15   , 25 ); //Left Side Indent
+        ui.line( UI.cos(UI.radians(7.5f)) * circleRadius, UI.sin(UI.radians(7.5f)) * circleRadius ,  circleRadius - 15 , 25 ); //Right Side Indent
+        ui.line( UI.cos(UI.radians(172.5f)) * circleRadius, UI.sin(UI.radians(172.5f)) * circleRadius , - circleRadius + 15   , 25 ); //Left Side Indent
 
-        ui.line( UI.cos(1.439897f) * circleRadius, UI.sin(1.439897f) * circleRadius ,  25 ,   circleRadius - 15 ); //Bottom Right Side Indent
-        ui.line( UI.cos(1.701696f) * circleRadius, UI.sin(1.701696f) * circleRadius ,  - 25 ,   circleRadius - 15 ); //Bottom Left Side Indent
+        ui.line( UI.cos(UI.radians(82.5f)) * circleRadius, UI.sin(UI.radians(82.5f)) * circleRadius ,  25 ,   circleRadius - 15 ); //Bottom Right Side Indent
+        ui.line( UI.cos(UI.radians(97.5f)) * circleRadius, UI.sin(UI.radians(97.5f)) * circleRadius ,  - 25 ,   circleRadius - 15 ); //Bottom Left Side Indent
 
         //Top Arc
-        ui.arc(0, 0, circleDiameter, circleDiameter , 3.2724923f,  4.5814893f);//Left Side
-        ui.arc(0, 0, circleDiameter, circleDiameter , 4.8432887f,  6.1522856f);//Right Side
+        ui.arc(0, 0, circleDiameter, circleDiameter , UI.radians(187.5f),  UI.radians(262.5f));//Left Side
+        ui.arc(0, 0, circleDiameter, circleDiameter , UI.radians(277.5f),  UI.radians(352.5f));//Right Side
 
-        ui.line( UI.cos(6.1522856f) * circleRadius, UI.sin(6.1522856f) * circleRadius ,  circleRadius - 15 , -25 ); //Right Side Indent
-        ui.line( UI.cos(3.2724923f) * circleRadius, UI.sin(3.2724923f) * circleRadius , - circleRadius + 15   , -25 ); //Left Side Indent
+        ui.line( UI.cos(UI.radians(352.5f)) * circleRadius, UI.sin(UI.radians(352.5f)) * circleRadius ,  circleRadius - 15 , -25 ); //Right Side Indent
+        ui.line( UI.cos(UI.radians(187.5f)) * circleRadius, UI.sin(UI.radians(187.5f)) * circleRadius , - circleRadius + 15   , -25 ); //Left Side Indent
 
-        ui.line( UI.cos(4.5814893f) * circleRadius, UI.sin(4.5814893f) * circleRadius ,  - 25 ,  - circleRadius + 15); //Top Left Side Indent
-        ui.line( UI.cos(4.8432887f) * circleRadius, UI.sin(4.8432887f) * circleRadius ,   25 ,  - circleRadius + 15); //Top Right Side Indent
+        ui.line( UI.cos(UI.radians(262.5f)) * circleRadius, UI.sin(UI.radians(262.5f)) * circleRadius ,  - 25 ,  - circleRadius + 15); //Top Left Side Indent
+        ui.line( UI.cos(UI.radians(277.5f)) * circleRadius, UI.sin(UI.radians(277.5f)) * circleRadius ,   25 ,  - circleRadius + 15); //Top Right Side Indent
 
         //Joining Lines
         ui.line(circleRadius - 15, 25, circleRadius - 15, -25); //Right Side Indent
@@ -52,31 +64,68 @@ public class CenterHud extends UiObject{
 
         //Pitch Yaw and Roll
         ui.text("R", - (circleRadius * 0.98f), -16);
-        ui.text(ui.getRoll(), - (circleRadius * 0.85f), -16);
         ui.text("Y", - (circleRadius * 0.98f), 0);
-        ui.text(ui.getYaw(), - (circleRadius * 0.85f), 0);
         ui.text("P", - (circleRadius * 0.98f), 16);
-        ui.text(ui.getPitch(), - (circleRadius * 0.85f), 16);
+        
+        ui.textAlign(UI.LEFT,UI.CENTER);
+        ui.text(roll, - (circleRadius * 0.92f), -16);
+        ui.text(yaw, - (circleRadius * 0.92f), 0);
+        ui.text(pitch, - (circleRadius * 0.92f), 16);
 
         //Roll
+        ui.textAlign(UI.CENTER,UI.CENTER);
+        ui.fill(255);
         ui.text("ROLL", 0, - (circleRadius * 0.99f));
+        ui.fill(0,255,0);
+        ui.text(roll, 0, - (circleRadius * 0.90f));
         
         //Yaw
+        ui.fill(255);
         ui.text("YAW", 0,  (circleRadius * 0.97f));
+        ui.fill(0,255,0);
+        ui.text(yaw, 0,  (circleRadius * 0.90f));
 
         //Pitch
-        char[] pitch = {'P','I','T','C','H'};
+        ui.fill(255);
+        char[] pitchString = {'P','I','T','C','H'};
         for( int i = 0; i < 5 ; i++)
         {
-            ui.text(pitch[i] , (circleRadius * 0.98f),  -24 + (i * 11) );
+            ui.text(pitchString[i] , (circleRadius * 0.98f),  -24 + (i * 11) );
         }
+        ui.fill(0,255,0);
+        ui.text(pitch, (circleRadius * 0.88f) , 0);
         ui.popMatrix();
     }
 
     public void update()
     {
+        roll = df.format( UI.abs( ui.getRoll() ) );
+        pitch = df.format( UI.abs( ui.getPitch() ) );
+        yaw = df.format( UI.abs( ui.getYaw() ) );
+
+        if(ui.getRoll() == 360 )
+        {
+            ui.setRoll(0);
+        }
+
+        if(ui.getYaw() == 360 )
+        {
+            ui.setYaw(0);
+        }
+
+        if(ui.getYaw() == 360 )
+        {
+            ui.setYaw(0);
+        }
+
+        if(ui.getPitch() == 180 )
+        {
+            ui.setPitch(0);
+        }
+
         if(ui.checkKey('w'))
         {
+            
             ui.setPitch( ui.getPitch() + 0.1f);
         }
 
