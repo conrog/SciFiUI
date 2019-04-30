@@ -1,14 +1,33 @@
 # SciFi UI Project
 
-Name:
+Name: Conor Rogers
 
-Student Number: 
-
-Fork this repository and use it a starter project for your assignment
+Student Number: C17730535
 
 # Description of the assignment
 
+For my assignemnt I decided create a user interface more specifically a Heads Up Display (HUD) for the controls of a spacecraft. I 
+
+
+
+I took inspiritation for my design from the recent docking of the Space X Dragon module with the International Space Station. 
+
 # Instructions
+
+The space craft is controlled with the following inputs :
+
+| Input | Action |
+|-----------|-----------|
+| w | Pitches the spacecraft down. |
+| s | Pitches the spacecraft up. |
+| a | Rolls the spacecraft left. |
+| d | Rolls the spacecraft right. |
+| q | Yaws the spacecraft left.  |
+| e | Yaws the spacecraft right.|
+
+The velocity of the spacecraft is controlled by moving the throttle from its central deadzone. By moving it up you increase the velocity and by moving it down you decrease velocity.
+
+The altitude of the spacecraft changes with regard to the current velocity of the ship and its current pitch.
 
 # How it works
 

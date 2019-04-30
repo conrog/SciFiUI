@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-
 public class Throttle extends UiObject
 {  
     private float lenght;
@@ -25,7 +24,7 @@ public class Throttle extends UiObject
         ui.fill(30);
 
         //Throttle
-        ui.rect(position.x - width, position.y + gap, width, lenght); 
+        ui.rect(position.x - width, position.y + gap, width, lenght); //Housing
         ui.line(position.x - width, 240, position.x, 240); // Forward Line
         ui.line(position.x - width, 285, position.x, 285); // Reverse Line
         ui.rect(position.x - width * 1.5f , dy ,50 , 25); //Moveable Rectangle
