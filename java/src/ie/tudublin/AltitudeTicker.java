@@ -14,7 +14,7 @@ public class AltitudeTicker extends UiObject
             yValues[i] = UI.map(i, 0, 2, 280, 400);
         }
 
-        setAltitude(100.00f);
+        altitude = 0;
     }
 
 
@@ -22,6 +22,7 @@ public class AltitudeTicker extends UiObject
     {
         ui.fill(255);
         ui.textSize(9);
+        ui.stroke(255);
         ui.text("ALTITUDE",position.x - 15, position.y - 100);
 
         for(int i = 0; i < yValues.length; i++)

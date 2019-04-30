@@ -103,22 +103,17 @@ public class CenterHud extends UiObject {
         pitch = df.format( UI.abs( ui.getPitch() ) );
         yaw = df.format( UI.abs( ui.getYaw() ) );
 
-        if(ui.getRoll() == 360 )
+        if(ui.getRoll() > 360 )
         {
             ui.setRoll(0);
         }
 
-        if(ui.getYaw() == 360 )
+        if(ui.getYaw() > 360 )
         {
             ui.setYaw(0);
         }
 
-        if(ui.getYaw() == 360 )
-        {
-            ui.setYaw(0);
-        }
-
-        if(ui.getPitch() == 180 )
+        if(ui.getPitch() > 180 )
         {
             ui.setPitch(0);
         }
