@@ -41,7 +41,7 @@ public class VelocityTicker extends UiObject
 
     public void update()
     {
-        if( ui.checkKey('=') )
+        if( ui.getForward() == 1 )
         {
             for(int i = 0; i < yValues.length ; i++)
             {
@@ -54,14 +54,9 @@ public class VelocityTicker extends UiObject
                     yValues[i] += 1;
                 }
             }
-
-            if( ui.frameCount % 60 == 0)
-            {
-                ui.setVelocity( ui.getVelocity() + 1);
-            }
         }
 
-        if( ui.checkKey('-') )
+        if( ui.getReverse() == 1)
         {
             for(int i = 0; i < yValues.length ; i++)
             {
@@ -73,11 +68,6 @@ public class VelocityTicker extends UiObject
                 {
                     yValues[i] -= 1;
                 }
-            }
-
-            if( ui.frameCount % 60 == 0)
-            {
-                ui.setVelocity( ui.getVelocity() - 1);
             }
         }
     }

@@ -17,6 +17,9 @@ public class UI extends PApplet
     private float altitude = 100;
     private float velocity = 10;
 
+    private int forward = 0;
+    private int reverse = 0;
+
     public void keyPressed()
     {
         keys[keyCode] = true;
@@ -42,7 +45,7 @@ public class UI extends PApplet
     public void setup()
     {
         uiObjects.add( new Radar(this, width * 0.925f, height * 0.2f , height * 0.2f, 2) );
-        uiObjects.add( new Radar(this, width * 0.075f, height * 0.2f , height * 0.2f, 0) );
+        uiObjects.add( new Throttle(this, width * 0.075f, height * 0.2f , height * 0.3f, 0) );
         
         uiObjects.add( new CenterHud(this, width/2f, height/2f, width * 0.4f, 0) );
         
@@ -77,7 +80,7 @@ public class UI extends PApplet
             a.update();
         }
 
-
+        mouseClicked();
     }
 
     /**
@@ -178,6 +181,33 @@ public class UI extends PApplet
         this.velocity = velocity;
     }
 
+    /**
+     * @return the forward
+     */
+    public int getForward() {
+        return forward;
+    }
+
+    /**
+     * @param forward the forward to set
+     */
+    public void setForward(int forward) {
+        this.forward = forward;
+    }
+
+    /**
+     * @return the reverse
+     */
+    public int getReverse() {
+        return reverse;
+    }
+
+    /**
+     * @param reverse the reverse to set
+     */
+    public void setReverse(int reverse) {
+        this.reverse = reverse;
+    }
 
 }
 
