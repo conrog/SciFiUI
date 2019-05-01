@@ -12,7 +12,8 @@ For my assignment I decided to create a user interface more specifically a Heads
 
 There are several elements to the project which are demonstrated in the following video.
 
-[![YouTube](https://img.youtube.com/upload_thumbnail?v=bctZhvw0bsI&t=hqdefault&ts=1556656716216)](https://youtu.be/bctZhvw0bsI)
+[![YouTube](https://i9.ytimg.com/vi/bctZhvw0bsI/mq2.jpg?sqp=COiupOYF&rs=AOn4CLDOkYTaR7avWuAM0FZtdYFqpHhbMQ)](https://youtu.be/bctZhvw0bsI)
+
 
 
 #Instructions
