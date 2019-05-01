@@ -12,10 +12,10 @@ For my assignment I decided to create a user interface more specifically a Heads
 
 There are several elements to the project which are demonstrated in the following video.
 
-[![YouTube](https://www.youtube.com/upload_thumbnail?v=bctZhvw0bsI&t=hqdefault&ts=1556656716216)](https://youtu.be/bctZhvw0bsI)
+[![YouTube](https://img.youtube.com/upload_thumbnail?v=bctZhvw0bsI&t=hqdefault&ts=1556656716216)](https://youtu.be/bctZhvw0bsI)
 
 
-# Instructions
+#Instructions
 
 The space craft is controlled with the following inputs:
 
@@ -32,13 +32,14 @@ The velocity of the spacecraft is controlled by moving the throttle from its cen
 
 The altitude of the spacecraft changes with regard to the current velocity of the ship and its current pitch.
 
-# How it works
+#How it works
 
 I made an abstract class called UiObject. Every class in the project then extends this abstract class and is placed into an Array List of uiObjects. Each UI object is then passed its own x,y coordinates (position), size and rotation. The program then cycles through this array list in the UI draw function.
 
 The classes used in the project are as follows:
 
-###UiObject
+####UiObject
+
 This is the code used for the abstract class UiObject.
 
 ```Java
@@ -69,24 +70,31 @@ I used this as the blueprint for my UI elements as each element has it's own pos
 The window class was used to draw the grey background and the white outline surrounding the window.
 
 #### CenterHud
-This class was used to draw the circular shape in the centre of the screen. It also prints the current roll, pitch and yaw of the space craft.
 
 ![An image](images/CenterHud.png)
+
+This class was used to draw the circular shape in the centre of the screen. It also prints the current roll, pitch and yaw of the space craft.
 
 The update function in this class handles the updating of the spacecrafts roll, pitch and yaw when the user presses the outlined keys in the instructions section.
 
 #### AttitudeIndicator
+
 ![An image](images/AttitudeIndicator.png)
+
 This class is used to draw a small attitude indicator in the bottom right of the screen. This gives the user an indication of the spacecrafts current pitch and roll in relation to a virtual horizon in order to prevent the user from becoming disorientated in the vastness of space.
 
 #### ThrusterIndicator
+
 ![An image](images/Thrusters.png)
+
 This class draws a small virtual representation of the spacecrafts thrusters in the bottom left of the screen.
 
 The update function handles the user’s inputs. For example, if the ship is increasing its pitch up the top two thrusters within the inner circle will become white, indicating the thrusters are firing in order to manoeuvre the spacecraft. This also happens to the various other thrusters when other pitching, rolling or yawing manoeuvres are taking place.
 
 ### Throttle
+
 ![An image](images/Throttle.png)
+
 This class draws a throttle in the top left of the screen which enables the user to control the ships velocity.
 
 The velocity is changed in the update method when the user moves the slider outside of the dead zone in the middle. If the slider is moved up, the velocity is increased. When the slider is moved down, the velocity of the spacecraft decreases.
