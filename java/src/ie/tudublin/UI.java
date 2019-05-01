@@ -79,8 +79,6 @@ public class UI extends PApplet
             a.render();
             a.update();
         }
-
-        mouseClicked();
     }
 
     /**

@@ -77,14 +77,6 @@ public class Window extends UiObject
 
     public void update()
     {
-        if(ui.checkKey(38))
-        {
-            velocity += 0.05f;
-        }
-
-        if(ui.checkKey(40) && velocity > 0)
-        {
-            velocity -= 0.05f;
-        }
+        
     }
 }
