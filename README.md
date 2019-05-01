@@ -16,7 +16,7 @@ There are several elements to the project which are demonstrated in the followin
 
 
 
-#Instructions
+# Instructions
 
 The space craft is controlled with the following inputs:
 
@@ -33,13 +33,13 @@ The velocity of the spacecraft is controlled by moving the throttle from its cen
 
 The altitude of the spacecraft changes with regard to the current velocity of the ship and its current pitch.
 
-#How it works
+# How it works
 
 I made an abstract class called UiObject. Every class in the project then extends this abstract class and is placed into an Array List of uiObjects. Each UI object is then passed its own x,y coordinates (position), size and rotation. The program then cycles through this array list in the UI draw function.
 
 The classes used in the project are as follows:
 
-####UiObject
+#### UiObject
 
 This is the code used for the abstract class UiObject.
 
